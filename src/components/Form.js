@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Button from './Button'
+import weatherApiKey from '../keys/api_keys'
 
 const people = [
     "Siri",
@@ -28,24 +29,41 @@ const people = [
 
 
 const Form = () => {
+    let newJson = [];
+
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
     // const [errorMessage, setErrorMessage] = useState(null);
     const handleChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
+    
 
-    const apiResponse = ({text}) => {
-      console.log("Pressed button", text);
+    // async function Res(){
+//   // const res = await fetch('http://api.weatherstack.com/current?access_key=c055844d5901b82f492d20b14950d9b7&query=New%20York')
+//   // const data = await res.json();
+//   // console.log(data.current);
+// }
+
+
+    async function apiResponse(){
+      console.log("Pressed button");
+      const url = 'http://api.weatherstack.com/current?access_key=c055844d5901b82f492d20b14950d9b7&query=' + searchTerm;
+      const setKson = await fetch(url).then(response => {return response.json()});
+      console.log(setKson.current);
+      setSearchResult(setKson);
+      // newJson = setKson;
+      // console.log(newJson.current);
+
+      // const data = await res.json();
+
+      // setSearchResult(data);
+      console.log(searchResult.current);
+
+      // setSearchResult(res.json());
+      // console.log(searchResult.current);
     }
-
-    // useEffect(() => {
-    //     const results = people.filter(person =>
-    //       person.toLowerCase().includes(searchTerm));
-
-    //     setSearchResults(results);
-    //   }, [searchTerm]);
 
     return (
         <div className="city-form">

@@ -5,7 +5,10 @@ const Button = (props) => {
     
     const handleClick = () => {
         console.log(props.city, weatherApiKey);
-        props.onButton({text: 'hiiiiiii'});
+
+        if (props.city !== ''){
+            props.onButton();
+        }
       };
 
 
