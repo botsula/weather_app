@@ -1,56 +1,42 @@
 import React, {useState, useEffect} from "react";
 
+const WeatherScreen = ({apiRespons}) => {
 
-const welcomeScreen = () => {
-    return (
-        <div>
-            <h2>Welcome to the Weather App!</h2>
-        </div>
+    console.log("TEST: ", apiRespons, "LEN: ", Object.keys(apiRespons).length);
+    return(
+      <div className="weather-screen">
+          <h2>{apiRespons.location.name}</h2>
+          <p>{apiRespons.location.country}</p>
+          <div className="weather-set">
+              <p className="temperature">{apiRespons.current.temperature} &#176;C</p>
+              <p>Feels like {apiRespons.current.feelslike} &#176;C</p>
+              <p>Pressure {apiRespons.current.pressure} MB</p>
+              <p>Humidity {apiRespons.current.humidity} %</p>
+              <p>Cloud coverage {apiRespons.current.cloudcover} %</p>
+              <p>Visibility {apiRespons.current.visibility} km</p>
+          </div>
+        {Object.keys(apiRespons).length === 3 ? (
+
+            <h2>{apiRespons.location.name}</h2>/
+            <p>{apiRespons.location.country}</p>/
+            <div className="weather-set">
+                <p className="temperature">{apiRespons.current.temperature} &#176;C</p>
+                <p>Feels like {apiRespons.current.feelslike} &#176;C</p>
+                <p>Pressure {apiRespons.current.pressure} MB</p>
+                <p>Humidity {apiRespons.current.humidity} %</p>
+                <p>Cloud coverage {apiRespons.current.cloudcover} %</p>
+                <p>Visibility {apiRespons.current.visibility} km</p>
+            </div>
+        
+        // <p>Yes, Current temperature in {apiRespons.location.name}</p>
+        
+        ) : (
+        
+        <p>Noooo</p>
+        
+        )}
+      </div>
     )
-}
-
-const weatherScreen = ({apiResponse}) => {
-    return (
-        <div>
-            <h2>Current temperature in {apiResponse.location.name} is {apiResponse.current.temperature}℃</h2>
-        </div>
-    )
-}
-
-const errorScreen = () => {
-    return (
-        <div>
-            <h2>No respond to your request!</h2>
-        </div>
-    )
-}
-
-
-
-const WeatherScreen = ({weatherApiResult, countOfRequests}) => {
-
-    const [showWeather, setShowWeather] = useState(false);
-    let res;
-
-    const dealWithWeather = () => {
-        if (countOfRequests > 0) {
-            if (weatherApiResult.success !== false) {
-                setShowWeather(weatherScreen(weatherApiResult));
-            } else {
-                setShowWeather(errorScreen())
-            }
-        } else {
-            setShowWeather(welcomeScreen());
-        };
-    };
-
-    dealWithWeather();
-
-    return (
-        <div>
-        <showWeather />
-        </div>
-    )
-}
+  }
 
 export default WeatherScreen;

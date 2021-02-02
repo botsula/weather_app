@@ -13,8 +13,8 @@ const Button = (props) => {
 
 
     return (
-        <button onClick={handleClick}>
-        Click me
+        <button className="search-button" onClick={handleClick}>
+        Search
       </button>
     );
 };

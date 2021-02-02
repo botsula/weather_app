@@ -47,13 +47,15 @@ const Form = () => {
 
     return (
         <div className="city-form">
+          <div className="search-place">
             <input className='input-place'
             type="text"
             placeholder="Choose the city..."
             value={searchTerm}
             onChange={handleChange} />
             <Button city={searchTerm} onButton={apiResponse}/>
-            {searchResult ? <Test apiRespons={searchResult}/> : <p>Hello!</p>}
+          </div>
+          {searchResult ? <WeatherScreen apiRespons={searchResult}/> : <p>Hello!</p>}
         </div>
     );
 }
