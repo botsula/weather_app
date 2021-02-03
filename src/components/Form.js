@@ -26,14 +26,14 @@ const Form = () => {
 
       // ========================================= API WORK ================================================================
       console.log("Pressed button");
-      const setKson = await fetch(`http://api.weatherstack.com/current?access_key=${weatherApiKey}&query=${searchTerm}`).then(response => {return response.json()});
-      console.log(setKson.current);
+      // const setKson = await fetch(`http://api.weatherstack.com/current?access_key=${weatherApiKey}&query=${searchTerm}`).then(response => {return response.json()});
+      // console.log(setKson.current);
       
-      setSearchResult(setKson);
-      console.log(searchResult);
+      // setSearchResult(setKson);
+      // console.log(searchResult);
 
       // +++++++++++++++++++++++++++++++++++++++++ TEST WORK +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-      // setSearchResult(NewYorkApiData);
+      setSearchResult(NewYorkApiData);
     }
 
     const Test = ({apiRespons}) => {

@@ -1,7 +1,9 @@
 import './App.css';
 import Header from './components/Header'
 import Form from './components/Form'
-import axios from 'axios';
+import Geolocation from 'react-native-geolocation-service';
+import React from 'react';
+
 
 
 const firebaseConfig = {
@@ -18,6 +20,18 @@ const firebaseConfig = {
 
 const App = () => {
   require('dotenv').config()
+
+
+  if ("geolocation" in navigator) {
+    console.log("Available");
+  } else {
+    console.log("Not Available");
+  }
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log("Latitude is :", position.coords.latitude);
+    console.log("Longitude is :", position.coords.longitude);
+  });
 
   return (
     <div className="down-layer">
