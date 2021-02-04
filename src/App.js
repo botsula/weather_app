@@ -2,10 +2,11 @@ import './App.css';
 import Header from './components/Header'
 import Form from './components/Form'
 import Geolocation from 'react-native-geolocation-service';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Geocoder from 'react-native-geocoding';
 import Geocode from "react-geocode";
 import Geocoding from './components/Geocoding'
+import Button from './components/Button';
 
 // import {Client} from "@googlemaps/google-maps-services-js";
 // import geolocationApiKey from './keys/api_keys'
@@ -29,37 +30,22 @@ const geolocationApiKey = 'AIzaSyCwxpANeKt8AeUyElYdGuzRpVvR6i-_NDE'
 const App = () => {
   require('dotenv').config()
 
+  // const [cityD, setCityD] = useState('');
 
-  // const [userCoordinates, setUserCoordinates] = useState([]);
-
-
-  // navigator.geolocation.getCurrentPosition(function(position) {
-  //   console.log("Latitude is :", position.coords.latitude);
-  //   console.log("Longitude is :", position.coords.longitude);
-
-  //   setUserCoordinates([position.coords.latitude, position.coords.longitude]);
-  // });
+  // let city = Geocoding();
+  // let count = 0; 
 
 
-  // Geocode.setApiKey('AIzaSyCwxpANeKt8AeUyElYdGuzRpVvR6i-_NDE');
-  // Geocode.setLanguage("en");
+    // setCityD(Geocoding());
 
-  // Geocode.fromLatLng(userCoordinates[0], userCoordinates[1]).then(
-  //   response => {
-  //     const address = response.results[0].formatted_address;
-  //     console.log(address);
-  //   },
-  //   error => {
-  //     console.error(error);
-  //   }
-  // );
-  Geocoding();
+  // console.log("The city is", city === '', city);
   
   return (
     <div className="down-layer">
       <div className='container'>
         <Header />
-        <Form />
+        {/* <button onClick={Geocoding} className="search-button"> Click </button> */}
+        <Form/>
       </div>
     </div>
   ); 
