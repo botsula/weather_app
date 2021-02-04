@@ -1,6 +1,5 @@
 import Geocode from "react-geocode";
-import React, {useState, useEffect} from 'react';
-import Geolocation from 'react-native-geolocation-service';
+import {useState, useEffect} from 'react';
 
 
 function Geocoding(){
@@ -71,9 +70,7 @@ function Geocoding(){
         
         return userCoordinates;
     };
-    // getCoordinates();
-        // return userCoordinates;
-    
+
 
     function getCity() {
         function geocodeWork(){
@@ -83,6 +80,8 @@ function Geocoding(){
             Geocode.fromLatLng(userCoordinates[0], userCoordinates[1]).then(setTimeout(10)).then(
               response => {
                 const address = response.results[0];
+                console.log(address);
+
                 const city = getAddressObject(address.address_components).city;
                 setUserCity(city);
                 console.log(city);
@@ -95,36 +94,32 @@ function Geocoding(){
         geocodeWork();
     };
 
-    // getCity();
 
-    // getCoordinates();
-    // getCity();
     useEffect(() => {
-
         getCoordinates();
-        // console.log('LAT ', userCoordinates[0], userCoordinates[1]);
-        
-        // fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + userCoordinates[0] + ',' + userCoordinates[1] + '&key=' + key)
-        // .then((response) => response.json())
-        // .then((responseJson) => {
-        //     console.log(responseJson);
-// })
-        // console.log("USER CITY: ", userCity);
-        // console.log("COORDS: ", userCoordinates);
     }, [])
 
     useEffect(() => {
+    // getCity();
+
+        getCoordinates()
+        console.log("COORDS: ", userCoordinates);
+
         fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + userCoordinates[0] + ',' + userCoordinates[1] + '&key=' + key)
                 .then((response) => response.json())
                 .then((responseJson) => {
-                    console.log(responseJson);
+                    console.log(responseJson.results);
+                    // const address = responseJson.results[0];
+                    // const city = getAddressObject(address.address_components).city;
+                    setUserCity(getAddressObject(responseJson.results[0].address_components).city);
+                    // console.log(city);
         })
-        console.log("USER CITY: ", userCity);
-        console.log("COORDS: ", userCoordinates);
-    })
+    }, [userCity])
 
     userCity === `L'viv` ? setUserCity('Lviv') : console.log('fine');
         // })
+    console.log("USER CITY: ", userCity);
+    
 
     return userCity;
 }

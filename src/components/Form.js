@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import Button from './Button'
-import weatherApiKey from '../keys/api_keys'
 import WeatherScreen from './WeatherScreen'
 import NewYorkApiData from '../keys/Data'
 import Welcome from './Welcome'
@@ -47,25 +46,6 @@ const Form = () => {
     }
 
     Geocoding();
-
-    // useEffect(() => {
-    //   Geocoding();
-    // //   setDefaultCity(Geocoding())
-    // //   .then(() => ( defaultCity !== '' && (setSearchTerm(defaultCity))
-    // //     )).then(() => (apiResponse()))
-    // }, []
-    // )
-
-
-
-      // while (defaultCity !== false || typeof defaultCity === String){
-      //   setTimeout(10);
-      // }
-      // setSearchResult(defaultCity);
-    //   apiResponse();
-    // }, [defaultCity]);
-    
-  
 
     return (
         <div className="city-form" on>

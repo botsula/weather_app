@@ -1,12 +1,7 @@
 import './App.css';
 import Header from './components/Header'
 import Form from './components/Form'
-import Geolocation from 'react-native-geolocation-service';
 import React, {useState, useEffect} from 'react';
-import Geocoder from 'react-native-geocoding';
-import Geocode from "react-geocode";
-import Geocoding from './components/Geocoding'
-import Button from './components/Button';
 
 // import {Client} from "@googlemaps/google-maps-services-js";
 // import geolocationApiKey from './keys/api_keys'
