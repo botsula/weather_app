@@ -1,4 +1,3 @@
-import Geocoding from './Geocoding'
 
 const Welcome = () => {
     return (
