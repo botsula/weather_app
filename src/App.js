@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Form from './components/Form'
 import React, {useState, useEffect} from 'react';
 import Geocoding from './components/Geocoding'
+import {BrowserRouter} from 'react-router-dom'
 
 // import {Client} from "@googlemaps/google-maps-services-js";
 // import geolocationApiKey from './keys/api_keys'
@@ -37,6 +38,7 @@ const App = () => {
   // console.log("The city is", city === '', city);
   
   return (
+    <BrowserRouter basename="/">
     <div className="down-layer">
       <div className='container'>
         <div className='heading'>
@@ -47,6 +49,7 @@ const App = () => {
         <Form/>
       </div>
     </div>
+    </BrowserRouter>
   ); 
 }
 
