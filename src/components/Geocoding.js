@@ -92,12 +92,10 @@ const Geocoding = ({apiResponse}) => {
 
     // this magic city is a default for fetching, so also little help 
     return (
-        <div>
+        <div  className="geolocation">
             
         { userCity !== 'Louisville' && (
-        <div>
-            <p>You are in 📍<b>{userCity}</b></p>
-        </div>)
+            <p>You are in:<br/><b>{userCity}</b></p>)
         }
         </div>
     );

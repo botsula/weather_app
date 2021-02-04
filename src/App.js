@@ -39,8 +39,10 @@ const App = () => {
   return (
     <div className="down-layer">
       <div className='container'>
+        <div className='heading'>
         <Header />
         <Geocoding />
+        </div>
         {/* <button onClick={Geocoding} className="search-button"> Click </button> */}
         <Form/>
       </div>

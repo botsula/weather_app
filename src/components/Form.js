@@ -4,6 +4,7 @@ import WeatherScreen from './WeatherScreen'
 import NewYorkApiData from '../keys/Data'
 import Welcome from './Welcome'
 import Geocoding from './Geocoding' 
+import weatherApiKey from '../keys/api_keys'
 
 
 
@@ -34,14 +35,14 @@ const Form = () => {
   async function apiResponse(){
     // ========================================= API WORK ================================================================
     console.log("Pressed button");
-    // const setKson = await fetch(`http://api.weatherstack.com/current?access_key=${weatherApiKey}&query=${searchTerm}`).then(response => {return response.json()});
-    // console.log(setKson.current);
+    const setKson = await fetch(`http://api.weatherstack.com/current?access_key=${weatherApiKey}&query=${searchTerm}`).then(response => {return response.json()});
+    console.log(setKson.current);
     
-    // setSearchResult(setKson);
-    // console.log(searchResult);
+    setSearchResult(setKson);
+    console.log(searchResult);
 
     // +++++++++++++++++++++++++++++++++++++++++ TEST WORK +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    setSearchResult(NewYorkApiData);
+    // setSearchResult(NewYorkApiData);
   }
 
     const Test = ({apiRespons}) => {
