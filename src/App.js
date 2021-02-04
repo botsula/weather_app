@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header'
 import Form from './components/Form'
 import React, {useState, useEffect} from 'react';
+import Geocoding from './components/Geocoding'
 
 // import {Client} from "@googlemaps/google-maps-services-js";
 // import geolocationApiKey from './keys/api_keys'
@@ -39,6 +40,7 @@ const App = () => {
     <div className="down-layer">
       <div className='container'>
         <Header />
+        <Geocoding />
         {/* <button onClick={Geocoding} className="search-button"> Click </button> */}
         <Form/>
       </div>

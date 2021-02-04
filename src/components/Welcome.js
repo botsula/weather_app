@@ -1,3 +1,5 @@
+import Geocoding from './Geocoding'
+
 const Welcome = () => {
     return (
         <div className="welcome">

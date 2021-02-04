@@ -1,14 +1,13 @@
 import Geocode from "react-geocode";
 import {useState, useEffect} from 'react';
+import Button from './Button'
 
+const Geocoding = ({apiResponse}) => {
 
-function Geocoding(){
-
-    const key = 'AIzaSyCwxpANeKt8AeUyElYdGuzRpVvR6i-_NDE';
+    const key = 'AIzaSyA1kw9a2Y4T8krZTVHFhU70rgLkWOp3c6w';
 
     const [userCoordinates, setUserCoordinates] = useState([]);
     const [userCity, setUserCity] = useState('');
-
 
     // from https://medium.com/@almestaadmicadiab/how-to-parse-google-maps-address-components-geocoder-response-774d1f3375d
     function getAddressObject(address_components) {
@@ -72,56 +71,36 @@ function Geocoding(){
     };
 
 
-    function getCity() {
-        function geocodeWork(){
-            Geocode.setApiKey('AIzaSyCwxpANeKt8AeUyElYdGuzRpVvR6i-_NDE');
-            Geocode.setLanguage("en-GB");
-          
-            Geocode.fromLatLng(userCoordinates[0], userCoordinates[1]).then(setTimeout(10)).then(
-              response => {
-                const address = response.results[0];
-                console.log(address);
-
-                const city = getAddressObject(address.address_components).city;
-                setUserCity(city);
-                console.log(city);
-              },
-              error => {
-                console.error(error);
-              }
-            );
-        }
-        geocodeWork();
-    };
-
-
     useEffect(() => {
         getCoordinates();
     }, [])
 
     useEffect(() => {
-    // getCity();
-
-        getCoordinates()
-        console.log("COORDS: ", userCoordinates);
 
         fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + userCoordinates[0] + ',' + userCoordinates[1] + '&key=' + key)
                 .then((response) => response.json())
                 .then((responseJson) => {
                     console.log(responseJson.results);
-                    // const address = responseJson.results[0];
-                    // const city = getAddressObject(address.address_components).city;
                     setUserCity(getAddressObject(responseJson.results[0].address_components).city);
-                    // console.log(city);
         })
+
     }, [userCity])
 
+    // little help for api
     userCity === `L'viv` ? setUserCity('Lviv') : console.log('fine');
-        // })
     console.log("USER CITY: ", userCity);
-    
 
-    return userCity;
+    // this magic city is a default for fetching, so also little help 
+    return (
+        <div>
+            
+        { userCity !== 'Louisville' && (
+        <div>
+            <p>You are in 📍<b>{userCity}</b></p>
+        </div>)
+        }
+        </div>
+    );
 }
 
 export default Geocoding;

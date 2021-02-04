@@ -3,25 +3,34 @@ import Button from './Button'
 import WeatherScreen from './WeatherScreen'
 import NewYorkApiData from '../keys/Data'
 import Welcome from './Welcome'
-import Geocoding from './Geocoding'
+import Geocoding from './Geocoding' 
+
+
 
 
 const Form = () => {
 
   let numberOfApiCalls = 0;
 
+
+  const [userCoordinates, setUserCoordinates] = useState([]);
+  const [userCity, setUserCity] = useState('');
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState(false);
   const [showWeather, setShowWeather] = useState(false);
   const [defaultCity, setDefaultCity] = useState('');
+
 
   // const [errorMessage, setErrorMessage] = useState(null);
   const handleChange = (e) => {
       setSearchTerm(e.target.value);
   };
 
+  let defCity;
   let screenShow;
 
+  // add "search"
   async function apiResponse(){
     // ========================================= API WORK ================================================================
     console.log("Pressed button");
@@ -45,7 +54,23 @@ const Form = () => {
       )
     }
 
-    Geocoding();
+    // Geocoding(apiResponse);
+
+    // useEffect(() => {
+      // dc = Geocoding();
+
+
+    //   setDefaultCity(Geocoding(defaultCity));
+      // console.log("DEFAULT CITY", dc);
+
+    // })
+
+    // console.log("DEF CITY:", bigCity);
+
+
+    // useEffect(() => {
+    //   console.log("DEF CITY", defCity);
+    // }, [defCity])
 
     return (
         <div className="city-form" on>
@@ -54,6 +79,7 @@ const Form = () => {
             type="text"
             placeholder="Choose the city..."
             value={searchTerm}
+
             onChange={handleChange} />
             <Button city={searchTerm} onButton={apiResponse}/>
           </div>
