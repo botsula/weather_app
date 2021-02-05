@@ -1,13 +1,14 @@
 # WeatherNow
-###JS + React -- Test Task
+### JS + React -- Test Task
 
+![alt text](https://github.com/botsula/weather_app/blob/master/src/pictures/Screenshot%20from%202021-02-05%2014-22-52.png?raw=true)
 
 
 **This app can:**
 - show current weather in a specified by user city
 - geolocate user position and detect city name
 
-** Tech Stack **:
+**Tech Stack**:
 - HTML, CSS, JS, REACT
 - [ Weather API ](https://weatherstack.com/http:// "weatherstack.com") 
 - [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview "Geocoding API")
