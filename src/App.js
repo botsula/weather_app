@@ -1,30 +1,26 @@
-import './App.css';
-import Header from './components/Header'
-import Form from './components/Form'
-import React, {useState, useEffect} from 'react';
-import Geocoding from './components/Geocoding'
-import { BrowserRouter } from "react-router-dom";
-const {Client} = require("@googlemaps/google-maps-services-js");
-
-// const geolocationApiKey = 'AIzaSyCwxpANeKt8AeUyElYdGuzRpVvR6i-_NDE'
+import "./App.css";
+import Header from "./components/Header";
+import Form from "./components/Form";
+import React from "react";
+import Geocoding from "./components/Geocoding";
+import { HashRouter } from "react-router-dom";
 
 const App = () => {
-  require('dotenv').config()
-  
+  require("dotenv").config();
+
   return (
-    <BrowserRouter basename="/">
-    <div className="down-layer">
-      <div className='container'>
-        <div className='heading'>
-        <Header />
-        <Geocoding />
+    <HashRouter basename="/">
+      <div className="down-layer">
+        <div className="container">
+          <div className="heading">
+            <Header />
+            <Geocoding />
+          </div>
+          <Form />
         </div>
-        {/* <button onClick={Geocoding} className="search-button"> Click </button> */}
-        <Form/>
       </div>
-    </div>
-    </BrowserRouter>
-  ); 
-}
+    </HashRouter>
+  );
+};
 
 export default App;
