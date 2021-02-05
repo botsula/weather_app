@@ -44,6 +44,6 @@ Currently hosted on https://botsula.github.io/weather_app.
 
 > **Keys Issues** : `.env` doesn't work as it has to after default setup, i didn't managed to spend a lot of time with it, but hope you can advice something and tell what should be changed. So keys for API are imported in a freaky way.
 
-** Thanks for reaching this code, hope to hear from you soon! ** 
+**Thanks for reaching this code, hope to hear from you soon!** 
 
 Anna Botsula
