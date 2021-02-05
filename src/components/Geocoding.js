@@ -62,8 +62,8 @@ const Geocoding = ({apiResponse}) => {
 
     const getCoordinates =() => {
         navigator.geolocation.getCurrentPosition(function(position) {
-            console.log("Latitude is :", position.coords.latitude);
-            console.log("Longitude is :", position.coords.longitude);
+            // console.log("Latitude is :", position.coords.latitude);
+            // console.log("Longitude is :", position.coords.longitude);
             setUserCoordinates([position.coords.latitude, position.coords.longitude]);
         });
         
@@ -88,7 +88,6 @@ const Geocoding = ({apiResponse}) => {
 
     // little help for api
     userCity === `L'viv` ? setUserCity('Lviv') : console.log('fine');
-    console.log("USER CITY: ", userCity);
 
     // this magic city is a default for fetching, so also little help 
     return (

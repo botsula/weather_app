@@ -23,8 +23,6 @@ const WeatherScreen = ({apiRespons}) => {
                 </div>
             </div>
         
-        // <p>Yes, Current temperature in {apiRespons.location.name}</p>
-        
         ) : (
           <div className="no-result">
         <h1>No result 🤔</h1>
