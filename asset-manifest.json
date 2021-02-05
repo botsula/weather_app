@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/weather_app/static/css/main.8aca88c0.chunk.css",
+    "main.js": "/weather_app/static/js/main.1028d226.chunk.js",
+    "main.js.map": "/weather_app/static/js/main.1028d226.chunk.js.map",
+    "runtime-main.js": "/weather_app/static/js/runtime-main.67c1bffd.js",
+    "runtime-main.js.map": "/weather_app/static/js/runtime-main.67c1bffd.js.map",
+    "static/js/2.2e9a9cae.chunk.js": "/weather_app/static/js/2.2e9a9cae.chunk.js",
+    "static/js/2.2e9a9cae.chunk.js.map": "/weather_app/static/js/2.2e9a9cae.chunk.js.map",
+    "static/js/3.c6e3dc86.chunk.js": "/weather_app/static/js/3.c6e3dc86.chunk.js",
+    "static/js/3.c6e3dc86.chunk.js.map": "/weather_app/static/js/3.c6e3dc86.chunk.js.map",
+    "index.html": "/weather_app/index.html",
+    "static/css/main.8aca88c0.chunk.css.map": "/weather_app/static/css/main.8aca88c0.chunk.css.map",
+    "static/js/2.2e9a9cae.chunk.js.LICENSE.txt": "/weather_app/static/js/2.2e9a9cae.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/weather_app/static/media/elektra.822da572.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67c1bffd.js",
+    "static/js/2.2e9a9cae.chunk.js",
+    "static/css/main.8aca88c0.chunk.css",
+    "static/js/main.1028d226.chunk.js"
+  ]
+}
