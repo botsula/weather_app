@@ -32,7 +32,7 @@ When app started, it will ask your geolocation detecting permission. Than if you
 > **Issue** : tried a lot, but didn't managed to create response in a moment to search weather right away user allowed to use location. So app only shows user location, but input user has to do by himself. Hope, you will give some tips about it.
 
 Then you just need to input the city to get current weather for it.
-> **Why not forecast? ** API for weather I used in a Free Plan allowed only to get current weather situation in time with no forecast.
+> **Why not forecast?** API for weather I used in a Free Plan allowed only to get current weather situation in time with no forecast.
 
 ## Deploy
 
