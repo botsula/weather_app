@@ -93,7 +93,7 @@ const Geocoding = ({ apiResponse }) => {
         <p>
           You are in:
           <br />
-          <b>{userCity}</b>
+      <b>{userCity} {process.env.WEATHER_API_KEY}</b>
         </p>
       )}
     </div>

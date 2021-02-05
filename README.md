@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# WeatherNow
+###JS + React -- Test Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+**This app can:**
+- show current weather in a specified by user city
+- geolocate user position and detect city name
 
-### `npm start`
+** Tech Stack **:
+- HTML, CSS, JS, REACT
+- [ Weather API ](https://weatherstack.com/http:// "weatherstack.com") 
+- [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview "Geocoding API")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Set Up & Run
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+App is build using `create-react-app`, so its quite easy to run it locally.
 
-### `npm test`
+1. Clone this repository from **master** branch : `git clone https://github.com/botsula/weather_app`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  `npm install` - install preferences.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
+3. `npm start` - run locally.
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### How to use?
 
-### Code Splitting
+When app started, it will ask your geolocation detecting permission. Than if you update the page `F5`, at the up-right corner you will see your current location. If you don't allow - nothing changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> **Issue** : tried a lot, but didn't managed to create response in a moment to search weather right away user allowed to use location. So app only shows user location, but input user has to do by himself. Hope, you will give some tips about it.
 
-### Analyzing the Bundle Size
+Then you just need to input the city to get current weather for it.
+> **Why not forecast? ** API for weather I used in a Free Plan allowed only to get current weather situation in time with no forecast.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Deploy
 
-### Making a Progressive Web App
+Currently hosted on https://botsula.github.io/weather_app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> **Hosting Issues** : currently page on hosting looks really bad and is not usefull. But the evening before when I was regulating **css webkit**, </**BrowserRouter**> and **gh-pages** it was great. 
 
-### Advanced Configuration
+> The only thing I had a problem with was API weather call, which I planned to fix with adding web-page hostig URL to the request, but in the morning everything just failed and I tried to recreate all stf, but now I would really appreciate if you would help with it a bit. Thanks in advance and sorry for a lot of text.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> **Keys Issues** : `.env` doesn't work as it has to after default setup, i didn't managed to spend a lot of time with it, but hope you can advice something and tell what should be changed. So keys for API are imported in a freaky way.
 
-### Deployment
+** Thanks for reaching this code, hope to hear from you soon! ** 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Anna Botsula
