@@ -1,5 +1,5 @@
 # WeatherNow
-### JS + React -- Test Task
+### JS + React
 
 ![alt text](https://github.com/botsula/weather_app/blob/master/src/pictures/Screenshot%20from%202021-02-05%2014-22-52.png?raw=true)
 
@@ -33,16 +33,6 @@ When app started, it will ask your geolocation detecting permission. Than if you
 
 Then you just need to input the city to get current weather for it.
 > **Why not forecast?** API for weather I used in a Free Plan allowed only to get current weather situation in time with no forecast.
-
-## Deploy
-
-Currently hosted on https://botsula.github.io/weather_app.
-
-> **Hosting Issues** : currently page on hosting looks really bad and is not usefull. But the evening before when I was regulating **css webkit**, </**BrowserRouter**> and **gh-pages** it was great. 
-
-> The only thing I had a problem with was API weather call, which I planned to fix with adding web-page hostig URL to the request, but in the morning everything just failed and I tried to recreate all stf, but now I would really appreciate if you would help with it a bit. Thanks in advance and sorry for a lot of text.
-
-> **Keys Issues** : `.env` doesn't work as it has to after default setup, i didn't managed to spend a lot of time with it, but hope you can advice something and tell what should be changed. So keys for API are imported in a freaky way.
 
 **Thanks for reaching this code, hope to hear from you soon!** 
 
